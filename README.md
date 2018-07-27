@@ -10,3 +10,9 @@ Link iniziali da cui sono partito:
 Nella cartella .vscode ci sono due file
 - task.json (definizione di attività di compilazione RUST per vscode)
 - launch.json (definizione di run e debug)  
+
+Ci sono alcuni file importanti ai fini dell'uso con i microcontrollori con RUST:
+- memory.x (contiene la mappa della memoria del device, gli indirizzi dello heap e dello stack)
+- loader.gdb (contiene la configurazione del gdb. Ma attenzione, alcune cose vanno date comunque a linea di comando quindi guardare anche al task.json in .vscode per capire bene cosa fare)
+- cargo.toml (è il file di progetto per RUST (nome del progetto autore etc))
+- .cargo\config (file di configurazione dell'ambiente di compilazione)
