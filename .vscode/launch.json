@@ -1,0 +1,33 @@
+{
+    // Usare IntelliSense per informazioni sui possibili attributi.
+    // Al passaggio del mouse vengono visualizzate le descrizioni degli attributi esistenti.
+    // Per ulteriori informazioni, visitare: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            //  Debug the STM32 Blue Pill program.
+            "name": "Mauri Blink Debug",
+            "type": "gdb",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+
+            //  This target setting is mandatory but redundant because it's specified in loader.gdb.
+            "target": "target/thumbv7m-none-eabi/debug/blink",
+
+            // Start arm-none-eabi-gdb with the loader.gdb script.  
+            // Connects to OpenOCD to send commands to ST-Link USB dongle.
+            "gdbpath": "arm-none-eabi-gdb",
+            "debugger_args": [
+                "-x",
+                "loader.gdb"
+            ],
+
+            //  For debugger display, don't interpret values returned by gdb.
+            "valuesFormatting": "disabled",
+
+            //  Enable debug output.
+            "printCalls": false,
+            "showDevDebugOutput": false,
+        }
+    ]
+}
