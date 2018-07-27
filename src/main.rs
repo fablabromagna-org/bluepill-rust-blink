@@ -7,9 +7,22 @@
 //
 // Per ora non lampeggia neanche... accende solo il led sulla board.
 
-// RUST con questo comando si libera di tutto quello che
-// serve per funzionare su un normale sistema operativo
-// e si prepara a lavorare sul bare metal (STM32) 
+// Articoli iniziali da cui sono partito
+//
+// https://medium.com/@ly.lee/coding-the-stm32-blue-pill-with-rust-and-visual-studio-code-b21615d8a20
+// http://nercury.github.io/rust/embedded/experiments/2018/04/29/rust-embedded-01-discovery-vl-flipping-bits.html
+//
+// Attenzione. 
+// Alcune funzionalità sono OK solo nella versione nightly del compilatore
+// Per attivare questa versione serve questo comando:
+// user$ rustup override set nightly-2018-04-29
+//
+
+// Con la seguente dichiarazione, RUST si libera di tutta 
+// la roba inutile (ma che gli servirebbe per funzionare 
+// su un normale sistema operativo!!) ...
+//
+// ... quindi si prepara a lavorare sul bare metal (STM32) 
 #![no_std]
 
 // ecco la lib che mappa i registri della cpu STM32F103
